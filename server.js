@@ -15,6 +15,7 @@ app.get("/", (req,res) =>{
     res.json("CONNECTED");
 })
 
+//EMAIL ROUTE TO PASS TO EMAILER
 app.post("/email", (req,res) =>{
     
     const {name, email, message} = req.body
