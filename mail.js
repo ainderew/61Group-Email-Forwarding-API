@@ -25,6 +25,7 @@ const sendMail = (name, email, message, cb) =>{
             cb(null, data)
         }
     })
+    //to add functionality
 }
 
 module.exports = sendMail;
