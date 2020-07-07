@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors")
 const app = express();
-// const sendMail = require("./mail");
+const sendMail = require("./mail");
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log("connected"));
@@ -19,11 +19,11 @@ app.get("/", (req,res) =>{
 app.post("/email", (req,res) =>{
     
     const {name, email, message} = req.body
-    // sendMail(name, email, message, (err, data) =>{
-    //     if (err){
-    //         res.status(500).json({message: "Error"})
-    //     }else {
-    //         res.json({message: "Email Sent"})
-    //     }
-    // } )
+    sendMail(name, email, message, (err, data) =>{
+        if (err){
+            res.status(500).json({message: "Error"})
+        }else {
+            res.json({message: "Email Sent"})
+        }
+    } )
 })
