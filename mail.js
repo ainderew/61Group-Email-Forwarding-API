@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport(mailGun(auth))
 const sendMail = (name, email, message, cb) =>{
     const mailOptions = {
         from: email,
-        to: "oleg.liyasov@61-group.ru",
+        to: process.env.MAILGUN_EMAIL,
         subject: `61 Group from ${name}`,
         text: message
     }
