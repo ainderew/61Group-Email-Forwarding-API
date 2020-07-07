@@ -3,6 +3,7 @@ const cors = require("cors")
 const app = express();
 const sendMail = require("./mail");
 const PORT = process.env.PORT || 5000;
+require("dotenv").config();
 
 app.listen(PORT, () => console.log("connected"));
 
