@@ -19,8 +19,9 @@ app.get("/", (req,res) =>{
 //EMAIL ROUTE TO PASS TO EMAILER
 app.post("/email", (req,res) =>{
     
-    const {name, email, message} = req.body
-    sendMail(name, email, message, (err, data) =>{
+    const {name, email, phone, message} = req.body
+    
+    sendMail(name, email, phone, message, (err, data) =>{
         if (err){
             res.status(500).json({message: "Error"})
         }else {
